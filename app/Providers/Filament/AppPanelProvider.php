@@ -36,17 +36,17 @@ class AppPanelProvider extends PanelProvider
             ->brandLogoHeight('2rem')
             ->colors([
                 'primary' => [
-                    50 => '#eff3fe',
-                    100 => '#e1eafe',
-                    200 => '#cad8fb',
-                    300 => '#a9bdf8',
-                    400 => '#879af2',
-                    500 => '#6a77ea',
-                    600 => '#4e51dd',
-                    700 => '#3f40c3',
-                    800 => '#36389d',
-                    900 => '#2e3173',
-                    950 => '#1d1e49',
+                    50 => '#fdf2f7',
+                    100 => '#fdebf3',
+                    200 => '#fccee2',
+                    300 => '#fba6c9',
+                    400 => '#f76fa5',
+                    500 => '#f04483',
+                    600 => '#e0225e',
+                    700 => '#c21446',
+                    800 => '#a0143a',
+                    900 => '#861534',
+                    950 => '#52051a',
                 ],
             ])
             ->darkMode(false)
@@ -54,8 +54,7 @@ class AppPanelProvider extends PanelProvider
             ->topNavigation()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages([
-            ])
+            ->pages([])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([])
             ->middleware([
