@@ -1,0 +1,20 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+body {
+  background: #fdebf3 !important;
+}
+
+.fi-topbar nav,
+.fi-sidebar-header {
+  @apply !shadow-none lg:!shadow-none bg-transparent ring-0 mx-auto max-w-7xl md:px-0 lg:px-0;
+}
+
+.fi-main-ctn {
+  @apply relative;
+}
+
+main {
+  @apply bg-white rounded-xl shadow mb-6 mt-8;
+}
