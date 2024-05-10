@@ -6,9 +6,8 @@ body {
   background: #fdebf3 !important;
 }
 
-.fi-topbar nav,
-.fi-sidebar-header {
-  @apply !shadow-none lg:!shadow-none bg-transparent ring-0 mx-auto max-w-7xl md:px-0 lg:px-0;
+.fi-topbar nav {
+  @apply !shadow-none lg:!shadow-none bg-primary-100/50 backdrop-blur ring-0 mx-auto max-w-7xl md:px-0 lg:px-0;
 }
 
 .fi-main-ctn {
@@ -17,4 +16,77 @@ body {
 
 main {
   @apply bg-white rounded-xl shadow mb-6 mt-8;
+}
+
+.editor {
+  @apply prose dark:prose-invert outline-none;
+}
+
+.fi-form-actions {
+  @apply hidden;
+}
+
+.fi-input-wrp {
+  @apply shadow-none ring-0;
+}
+
+.fi-input-wrp:not(:has(.fi-ac-action:focus)):focus-within {
+  @apply !ring-0;
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+.prose :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.prose ol,
+.prose ul {
+  list-style: none !important;
+  padding: 0;
+}
+
+.prose li p {
+  @apply !m-0 !leading-6;
+}
+
+.prose li p + p {
+  @apply !mt-2;
+}
+
+.prose li.ProseMirror-selectednode {
+  outline: 2px solid #8cf;
+}
+
+.prose li::after {
+  all: unset !important;
+}
+
+milkdown-list-item-block .list-item {
+  gap: 8px;
+}
+
+milkdown-list-item-block .label-wrapper {
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: darkcyan;
+}
+
+.tippy-box:has(.slash-menu) {
+  background: transparent;
+}
+
+.tippy-content:has(.slash-menu) {
+  padding: 0px;
 }

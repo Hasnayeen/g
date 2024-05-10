@@ -9,12 +9,15 @@ use Filament\Navigation\NavigationItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
@@ -75,6 +78,10 @@ class AppPanelProvider extends PanelProvider
 
     public function boot(): void
     {
+        Model::unguard();
+        FilamentAsset::register([
+            AlpineComponent::make('editor', __DIR__ . '/../../../resources/js/dist/editor.js'),
+        ]);
         FilamentView::registerRenderHook(
             PanelsRenderHook::TOPBAR_AFTER,
             fn (): View => view('filament.hooks.stacked-card'),
