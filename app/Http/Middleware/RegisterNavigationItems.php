@@ -26,8 +26,7 @@ class RegisterNavigationItems
             collect([])->concat(
                 $projects
                     ->transform(
-                        fn (Project $project): NavigationItem
-                        => NavigationItem::make($project->name)
+                        fn (Project $project): NavigationItem => NavigationItem::make($project->name)
                             ->group(__('Projects'))
                             ->url(route('filament.app.resources.projects.view', ['record' => $project]))
                             ->isActiveWhen(fn (): bool => Str::startsWith(request()->route()->getName(), 'filament.app.resources.projects'))
@@ -40,8 +39,7 @@ class RegisterNavigationItems
             )->concat(
                 $teams
                     ->transform(
-                        fn (Team $team): NavigationItem
-                        => NavigationItem::make($team->name)
+                        fn (Team $team): NavigationItem => NavigationItem::make($team->name)
                             ->group(__('Teams'))
                             ->url(route('filament.app.resources.projects.view', ['record' => $team]))
                             ->isActiveWhen(fn (): bool => Str::startsWith(request()->route()->getName(), 'filament.app.resources.teams'))
