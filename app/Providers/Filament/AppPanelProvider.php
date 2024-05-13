@@ -30,6 +30,7 @@ class AppPanelProvider extends PanelProvider
             ->default()
             ->id('app')
             ->path('/')
+            ->homeUrl('/')
             ->login()
             ->registration()
             ->brandLogo(asset('logo.svg'))

@@ -60,7 +60,7 @@ class User extends Authenticatable
 
     public function projects()
     {
-        return $this->selfProjects()->union($this->teamProjects());
+        return $this->selfProjects->union($this->teamProjects());
     }
 
     public function teams(): BelongsToMany

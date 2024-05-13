@@ -31,6 +31,7 @@ class CreateProject extends CreateRecord
                 'title' => $data['name'],
                 'content' => $data['note'],
             ]);
+            auth()->user()->selfProjects()->save($project);
 
             return $project;
         });
