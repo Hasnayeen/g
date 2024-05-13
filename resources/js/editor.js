@@ -1,4 +1,5 @@
 import { Editor, rootCtx, defaultValueCtx } from "@milkdown/core";
+import { listener, listenerCtx } from "@milkdown/plugin-listener";
 import { commonmark } from "@milkdown/preset-commonmark";
 import { gfm } from "@milkdown/preset-gfm";
 import { history } from "@milkdown/plugin-history";
@@ -20,6 +21,11 @@ export default function editor({ state }) {
           ctx.set(slash.key, {
             view: slashPluginView,
           });
+          ctx
+            .get(listenerCtx)
+            .markdownUpdated((ctx, markdown, prevMarkdown) => {
+              this.state = markdown;
+            });
         })
         .use(commonmark)
         .use(gfm)
@@ -27,6 +33,7 @@ export default function editor({ state }) {
         .use(history)
         .use(clipboard)
         .use(slash)
+        .use(listener)
         .create();
     },
   };

@@ -4,7 +4,7 @@
         ax-load
         ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('editor') }}"
         x-data="editor({
-            state: $wire.{{ $applyStateBindingModifiers(" \$entangle('data.note')") }},
+            state: $wire.{{ $applyStateBindingModifiers(" \$entangle('{$getStatePath()}')") }},
         })"
     >
         <div id="editor" class="whitespace-pre-wrap"></div>

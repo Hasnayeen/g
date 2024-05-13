@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('content');
             $table->unsignedBigInteger('noteable_id');
             $table->string('noteable_type');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
